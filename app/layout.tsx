@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark !scroll-smooth">
-      <body className={`${dmsans.className} flex flex-col items-center justify-center relative bg-black`}>
+      <body className={`${dmsans.className} flex flex-col items-center justify-center relative bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]`}>
         {/* <div className="fixed inset-0 bg-[linear-gradient(to top left,#152331,#000000)] bg- z-[-1]"/> */}
         {/* <div className="absolute top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
         <Header />

@@ -8,6 +8,13 @@ import Link from "next/link";
 import { downloadResume } from "@/lib/utils";
 
 export default function About() {
+
+  const UnderlinedText = ({ children }: { children: React.ReactNode }) => (
+    <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4 transition-all">
+      {children}
+    </span>
+  );
+  
   return (
     <motion.main
       className="md:w-[41rem] m-auto px-7 py-10 mt-24"
@@ -34,17 +41,18 @@ export default function About() {
       // transition={{delay: 0.8}}
       >
         <motion.p
-          className="mb-8 transition-all"
+          className="mb-8"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-        >Hey, I&apos;m Uttam Likhiya, a <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">self-taught</span> developer residing in <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Surat, Gujarat</span>, skilled in both <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Frontend</span> and <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Backend</span> web development with an year of hands-on experience. Currently pursuing a degree in <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Computer Engineering</span>, I&apos;m passionate about crafting seamless digital experiences from databases to CSS stylesheets.</motion.p>
+        >Hey, I&apos;m Uttam Likhiya, a <UnderlinedText>self-taught</UnderlinedText> developer residing in <UnderlinedText>Surat, Gujarat</UnderlinedText>, skilled in both <UnderlinedText>Frontend</UnderlinedText> and <UnderlinedText>Backend</UnderlinedText> web development with an year of hands-on experience. Currently pursuing a degree in <UnderlinedText>Computer Engineering</UnderlinedText>, I&apos;m passionate about crafting seamless digital experiences from databases to CSS stylesheets.</motion.p>
 
         <motion.p
+          className="transition-all"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-        >In my spare time, I delve into various subjects through books, ranging from <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Psychology</span> and <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4">Science</span>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
+        >In my spare time, I delve into various subjects through books, ranging from <UnderlinedText>Psychology</UnderlinedText>, <UnderlinedText>Political Fiction</UnderlinedText> and <UnderlinedText>Science</UnderlinedText>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
       </motion.article>
       <motion.div
         className="inline-block"
