@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Badge } from './ui/badge'
 import { IconBaseProps } from 'react-icons';
+import { FaRegFileAlt } from 'react-icons/fa';
 
 type ProjectType = {
     title: string;
@@ -26,16 +27,16 @@ export default function Project(project: ProjectType) {
 
 
     return (
-        <motion.div className='ring-[0.1rem] ring-primary-foreground  rounded-sm my-4 p-4'
+        <motion.div className='ring-[0.1rem] ring-primary-foreground rounded-md my-4 px-4 md:p-4'
             ref={ref}
             style={{
                 scale: scaleProgess,
                 opacity: opacityProgess,
             }}>
-            <h2 className='text-xl text-white/80'>
+            <h2 className='text-2xl font-semibold my-4 text-white'>
                 {project.title}
             </h2>
-            <p className='my-5'>
+            <p className='my-4 text-sm md:text-base'>
                 {project.description}
             </p>
             <div className='flex gap-5'>
@@ -50,7 +51,7 @@ export default function Project(project: ProjectType) {
             <div className='my-5 flex gap-2 flex-wrap'>
                 {
                     project.bagdes.map((badge) => (
-                        <Badge key={badge} variant="secondary" className='flex gap-2'>{badge}</Badge>
+                        <Badge key={badge} variant='secondary'>{badge}</Badge>
                     ))
                 }
             </div>

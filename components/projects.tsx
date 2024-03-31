@@ -31,7 +31,7 @@ export default function Projects() {
                     ))
                 }
             </div>
-            <hr className="mt-12 text-muted-foreground" />
+            <hr className="mt-12 mx-auto w-24 text-muted-foreground" />
         </section>
     )
 }

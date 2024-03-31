@@ -11,7 +11,7 @@ export default function TechStack() {
       <ul className='my-2 flex gap-x-5 flex-wrap gap-y-2 text-muted-foreground'>
         {
           skills.map((item) => (
-            <li key={item.name} className="underline-offset-4 hover:underline hover:text-accent-foreground">
+            <li key={item.name} className="underline-offset-4 underline decoration-muted hover:decoration-white hover:text-accent-foreground transition-all">
               <span className="flex items-center justify-center gap-2">
                 {item.icon}{item.name}
               </span>

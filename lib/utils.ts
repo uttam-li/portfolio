@@ -1,8 +1,8 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const validateString = (
@@ -30,4 +30,14 @@ export const getErrorMessage = (error: unknown): string => {
   }
 
   return message;
+};
+
+export const downloadResume = () => {
+  const pdfUrl = "/resume.pdf";
+  const link = document.createElement("a");
+  link.href = pdfUrl;
+  link.download = "Uttam's Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
