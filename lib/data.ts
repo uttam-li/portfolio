@@ -74,7 +74,7 @@ export const socialLinks = [
   },
   {
     name: "Reddit",
-    url: "https://reddit.com/user/Uttam_L_31",
+    url: "https://reddit.com/user/dhokla_diplomat",
     icon: React.createElement(BsReddit),
   },
 ];
