@@ -19,14 +19,13 @@ import { FaPaperPlane } from "react-icons/fa6"
 import { useFormStatus } from "react-dom";
 import { toast } from "./ui/use-toast"
 
-
 export function DrawerDemo() {
     const { pending } = useFormStatus();
 
     return (
         <Drawer>
             <DrawerTrigger asChild>
-                <Button variant="secondary">Get in touch</Button>
+                <Button variant="outline">Get in touch</Button>
             </DrawerTrigger>
             <DrawerContent className="flex items-center justify-center">
                 <div className="mt-10 mb-20 sm:mb-28 w-[min(100%,38rem)] text-center ">

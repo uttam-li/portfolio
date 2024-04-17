@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "I am a full-stack developer. I love to build things that are useful and beautiful.",
   generator: "Next.js",
   applicationName: "Uttam | Portfolio",
-  keywords: ["Uttam", "Uttam Likhiya", "Uttam | Portfolio", "Likhiya", "Portfolio",  "Developer",  "Full-stack",  "React", "Next.js",  "TailwindCSS", "JavaScript", "Web Development", "Frontend Development", "Backend Development", "Node.js", "Express.js", "MongoDB", "SQL", "HTML", "CSS", "Responsive Design", "Web Design", "UI/UX", "Software Engineer", "Coding", "Programming"],
+  keywords: ["Uttam", "Uttam Likhiya", "Uttam | Portfolio", "Likhiya", "Portfolio", "Developer", "Full-stack", "React", "Next.js", "TailwindCSS", "JavaScript", "Web Development", "Frontend Development", "Backend Development", "Node.js", "Express.js", "MongoDB", "SQL", "HTML", "CSS", "Responsive Design", "Web Design", "UI/UX", "Software Engineer", "Coding", "Programming"],
   authors: [{ name: 'Uttam Likhiya', url: 'https://puli.vercel.app' }],
   openGraph: {
     title: 'Uttam | Portfolio',
@@ -68,12 +68,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark !scroll-smooth">
-      <body className={`${dmsans.className} flex flex-col items-center justify-center relative bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]`}>
-        {/* <div className="fixed inset-0 bg-[linear-gradient(to top left,#152331,#000000)] bg- z-[-1]"/> */}
-        {/* <div className="absolute top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
-        <Header />
-        {children}
-        <Toaster />
+      <body className={`${dmsans.className} flex flex-col items-center justify-center relative bg-[#050505]`}>
+          <Header />
+          {children}
+          <Toaster />
       </body>
     </html>
   );

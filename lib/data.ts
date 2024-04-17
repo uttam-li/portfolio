@@ -1,4 +1,4 @@
-import React, { createElement } from "react";
+import { createElement } from "react";
 import {
   BsGithub,
   BsInstagram,
@@ -8,9 +8,7 @@ import {
   BsTwitter,
   BsTools,
 } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
-import { RiLightbulbFlashLine } from "react-icons/ri";
-import { MdOutlineWorkspacePremium } from "react-icons/md";
+import { UserIcon, Briefcase05Icon, BulbIcon, StarIcon } from 'hugeicons-react'
 import {
   SiPython,
   SiReact,
@@ -30,52 +28,48 @@ import {
   SiEsbuild,
   SiWebpack,
   SiPrisma,
+  SiRedis,
 } from "react-icons/si";
 
 export const navItems = [
   {
     name: "About",
     hash: "#about",
-    icon: createElement(AiOutlineUser, { size: 24 }),
+    icon: createElement(UserIcon, { size: 24 }),
   },
   {
     name: "Projects",
     hash: "#projects",
-    icon: createElement(RiLightbulbFlashLine, { size: 24 }),
+    icon: createElement(BulbIcon),
   },
   {
     name: "Experience",
     hash: "#experience",
-    icon: createElement(MdOutlineWorkspacePremium, { size: 24 }),
+    icon: createElement(Briefcase05Icon),
   },
-  { name: "Skill", hash: "#skill", icon: createElement(BsTools, { size: 24 }) },
+  { name: "Skill", hash: "#skill", icon: createElement(StarIcon) },
 ];
 
 export const socialLinks = [
   {
     name: "GitHub",
     url: "https://github.com/uttam-li",
-    icon: React.createElement(BsGithub),
+    icon: createElement(BsGithub),
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/uttamlikhiya",
-    icon: React.createElement(BsLinkedin),
+    icon: createElement(BsLinkedin),
   },
   {
     name: "Twitter",
     url: "https://twitter.com/l1kh1yauttam",
-    icon: React.createElement(BsTwitter),
+    icon: createElement(BsTwitter),
   },
   {
     name: "Instagram",
     url: "https://instagram.com/uttam_likhiya",
-    icon: React.createElement(BsInstagram),
-  },
-  {
-    name: "Reddit",
-    url: "https://reddit.com/user/dhokla_diplomat",
-    icon: React.createElement(BsReddit),
+    icon: createElement(BsInstagram),
   },
 ];
 
@@ -88,12 +82,12 @@ export const projects = [
       {
         name: "GitHub",
         url: "https://github.com/uttam-li/billify",
-        icon: React.createElement(BsGithub),
+        icon: createElement(BsGithub),
       },
       {
         name: "Demo",
         url: "https://billify-psi.vercel.app",
-        icon: React.createElement(BsBoxArrowUpRight),
+        icon: createElement(BsBoxArrowUpRight),
       },
     ],
     bagdes: [
@@ -115,12 +109,12 @@ export const projects = [
       {
         name: "GitHub",
         url: "https://github.com/uttam-li/techNotes",
-        icon: React.createElement(BsGithub),
+        icon: createElement(BsGithub),
       },
       {
         name: "Demo",
         url: "https://uttam-technotes.onrender.com",
-        icon: React.createElement(BsBoxArrowUpRight),
+        icon: createElement(BsBoxArrowUpRight),
       },
     ],
     bagdes: [
@@ -173,23 +167,24 @@ export const experience = [
 ];
 
 export const skills = [
-  { name: "TypeScript", icon: React.createElement(SiTypescript) },
-  { name: "Git", icon: React.createElement(SiGit) },
-  { name: "React", icon: React.createElement(SiReact) },
-  { name: "Nextjs", icon: React.createElement(SiNextdotjs) },
-  { name: "TailwindCSS", icon: React.createElement(SiTailwindcss) },
-  { name: "Redux", icon: React.createElement(SiRedux) },
-  { name: "Nodejs", icon: React.createElement(SiNodedotjs) },
-  { name: "Express", icon: React.createElement(SiExpress) },
-  { name: "PostgreSQL", icon: React.createElement(SiPostgresql) },
-  { name: "Prisma", icon: React.createElement(SiPrisma) },
-  { name: "MongoDB", icon: React.createElement(SiMongodb) },
-  { name: "Python", icon: React.createElement(SiPython) },
-  { name: "Docker", icon: React.createElement(SiDocker) },
-  { name: "React Native", icon: React.createElement(SiReact) },
-  { name: "ESLint", icon: React.createElement(SiEslint) },
-  { name: "ESbuild", icon: React.createElement(SiEsbuild) },
-  { name: "Webpack", icon: React.createElement(SiWebpack) },
-  { name: "Figma", icon: React.createElement(SiFigma) },
-  { name: "Framer Motion", icon: React.createElement(SiFramer) },
+  { name: "TypeScript", icon: createElement(SiTypescript) },
+  { name: "Git", icon: createElement(SiGit) },
+  { name: "React", icon: createElement(SiReact) },
+  { name: "Nextjs", icon: createElement(SiNextdotjs) },
+  { name: "TailwindCSS", icon: createElement(SiTailwindcss) },
+  { name: "Redux", icon: createElement(SiRedux) },
+  { name: "Nodejs", icon: createElement(SiNodedotjs) },
+  { name: "Express", icon: createElement(SiExpress) },
+  { name: "Redis", icon: createElement(SiRedis)},
+  { name: "PostgreSQL", icon: createElement(SiPostgresql) },
+  { name: "Prisma", icon: createElement(SiPrisma) },
+  { name: "MongoDB", icon: createElement(SiMongodb) },
+  { name: "Python", icon: createElement(SiPython) },
+  { name: "Docker", icon: createElement(SiDocker) },
+  { name: "React Native", icon: createElement(SiReact) },
+  { name: "ESLint", icon: createElement(SiEslint) },
+  { name: "ESbuild", icon: createElement(SiEsbuild) },
+  { name: "Webpack", icon: createElement(SiWebpack) },
+  { name: "Figma", icon: createElement(SiFigma) },
+  { name: "Framer Motion", icon: createElement(SiFramer) },
 ];

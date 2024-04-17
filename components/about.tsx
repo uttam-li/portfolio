@@ -14,7 +14,7 @@ export default function About() {
       {children}
     </span>
   );
-  
+
   return (
     <motion.main
       className="md:w-[41rem] m-auto px-7 py-10 mt-24"
@@ -55,14 +55,14 @@ export default function About() {
         >In my spare time, I delve into various subjects through books, ranging from <UnderlinedText>Psychology</UnderlinedText>, <UnderlinedText>Political Fiction</UnderlinedText> and <UnderlinedText>Science</UnderlinedText>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
       </motion.article>
       <motion.div
-        className="inline-block"
+        className="inline-flex gap-4"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
         {/* <Button variant="outline" size='lg' className="mr-5">Get in touch</Button> */}
         <Contect />
-        <Button variant="default" className="ml-5" onClick={() => downloadResume()}>Resume</Button>
+        <Button variant="secondary" onClick={() => downloadResume()}>Resume</Button>
       </motion.div>
       <motion.hr className="mt-12 text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
@@ -75,7 +75,8 @@ export default function About() {
       <motion.div className="my-2 flex gap-x-5 flex-wrap gap-y-2 text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}>
+        transition={{ delay: 0.8 }}
+      >
         {
           socialLinks.map((link) => (
             <Link key={link.name} href={link.url} className="underline-offset-4 underline decoration-muted hover:decoration-white hover:text-accent-foreground">

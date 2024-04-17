@@ -11,7 +11,7 @@ export default function Experience() {
         <article key={exp.key} className="my-8">
           <span>{exp.date}</span>
           <div className="sm:flex items-center gap-2 pt-2">  
-          <h3 className='text-2xl text-nowrap font-bold underline decoration-muted hover:decoration-white text-accent-foreground underline-offset-4 transition-all'>{exp.companyName}</h3>
+          <h3 className='text-2xl text-nowrap font-bold text-accent-foreground'>{exp.companyName}</h3>
           <p className='hidden sm:block'>&mdash;</p>
           <p className=' text-muted-foreground sm:text-lg italic'>{exp.position}</p>
           </div>
