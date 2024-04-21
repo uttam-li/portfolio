@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { DrawerDemo as Contect } from "@/components/contect";
-import { easeIn, easeInOut, motion, stagger } from 'framer-motion'
+import { easeIn, easeInOut, easeOut, motion, stagger } from 'framer-motion'
 import { socialLinks } from "@/lib/data";
 import Link from "next/link";
 import { downloadResume } from "@/lib/utils";
@@ -20,19 +20,20 @@ export default function About() {
       className="md:w-[41rem] m-auto px-7 py-10 mt-24"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: easeInOut }}
+      transition={{ ease: easeInOut }}
+      
     >
       <motion.h1 className="font-bold text-4xl scroll-m-[40rem]"
         id="about"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0, }}
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
       >Uttam Likhiya</motion.h1>
       <motion.span
         className="text-sm text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
       >&lt;supercelluttam@gmail.com&gt;</motion.span>
       <motion.article
         className="mt-12 mb-8 text-muted-foreground"
@@ -44,21 +45,21 @@ export default function About() {
           className="mb-8"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
         >Hey, I&apos;m Uttam Likhiya, a <UnderlinedText>self-taught</UnderlinedText> developer residing in <UnderlinedText>Surat, Gujarat</UnderlinedText>, skilled in both <UnderlinedText>Frontend</UnderlinedText> and <UnderlinedText>Backend</UnderlinedText> web development with an year of hands-on experience. Currently pursuing a degree in <UnderlinedText>Computer Engineering</UnderlinedText>, I&apos;m passionate about crafting seamless digital experiences from databases to CSS stylesheets.</motion.p>
 
         <motion.p
-          className="transition-all"
+          className=""
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >In my spare time, I delve into various subjects through books, ranging from <UnderlinedText>Psychology</UnderlinedText>, <UnderlinedText>Political Fiction</UnderlinedText> and <UnderlinedText>Science</UnderlinedText>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >In my spare time, I delve into various subjects through books, ranging from <UnderlinedText>Psychology</UnderlinedText>, <UnderlinedText>Fiction</UnderlinedText> and <UnderlinedText>Science</UnderlinedText>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
       </motion.article>
       <motion.div
         className="inline-flex gap-4"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
       >
         {/* <Button variant="outline" size='lg' className="mr-5">Get in touch</Button> */}
         <Contect />
@@ -67,7 +68,7 @@ export default function About() {
       <motion.hr className="mt-12 text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }} />
+        transition={{ delay: 0.6, duration: 0.5 }} />
       <motion.p className="mt-5 text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,7 +76,7 @@ export default function About() {
       <motion.div className="my-2 flex gap-x-5 flex-wrap gap-y-2 text-muted-foreground"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
       >
         {
           socialLinks.map((link) => (
@@ -89,7 +90,7 @@ export default function About() {
       </motion.div>
       <motion.hr className="mt-5 text-muted-foreground" initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9 }} />
+        transition={{ delay: 0.9, duration: 0.5 }} />
     </motion.main>
   )
 }

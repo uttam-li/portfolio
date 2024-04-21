@@ -2,8 +2,6 @@
 
 import { navItems } from '@/lib/data'
 import { Alex_Brush } from 'next/font/google'
-import Image from 'next/image'
-import { CascadiaCode, geist } from "@/fonts/font";
 import React, { useEffect, useState } from "react";
 import {
     motion,
@@ -12,7 +10,6 @@ import {
     useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
-import { cn } from '@/lib/utils';
 
 const font = Alex_Brush({
     subsets: ['latin'],
@@ -27,8 +24,6 @@ export default function Header() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
-    console.log(scrollYProgress.get());
 
     useMotionValueEvent(scrollYProgress, "change", (current) => {
         // Check if current is not undefined and is a number
@@ -66,7 +61,7 @@ export default function Header() {
                 }}
                 className="fixed inset-4 ring-1 ring-secondary rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] h-[3rem] sm:h-[3.5rem] max-w-[1000px] flex items-center justify-between z-999 backdrop-blur-lg backdrop-brightness-10 pr-4 mx-auto"
             >
-                <aside className='pl-3 md:pl-4'>
+                <aside className='pl-3 md:pl-4 animate-pulse'>
                     <h1 className={`text-4xl ${font.className} text-muted-foreground mr-5 mt-1`}>
                         UL
                     </h1>
@@ -75,8 +70,8 @@ export default function Header() {
                     <ul className='flex gap-x-3 justify-end'>
                         {
                             navItems.map((item) => (
-                                <li key={item.hash}>
-                                    <Link href={item.hash} className="underline-offset-4 hover:underline hover:text-accent-foreground p-2 transition-all">{item.name}</Link>
+                                <li className='active:scale-90 transition-all' key={item.hash}>
+                                    <Link href={item.hash} className="hover:text-accent-foreground p-2">{item.name}</Link>
                                 </li>
                             ))
                         }
@@ -86,8 +81,8 @@ export default function Header() {
                     <ul className='flex gap-x-4 justify-end'>
                         {
                             navItems.map((item) => (
-                                <li key={item.hash}>
-                                    <Link href={item.hash} className="hover:text-accent-foreground p-2 transition-all">{item.icon}</Link>
+                                <li className='active:scale-90 transition-all' key={item.hash}>
+                                    <Link href={item.hash} className="hover:text-accent-foreground p-2">{item.icon}</Link>
                                 </li>
                             ))
                         }

@@ -27,12 +27,13 @@ export default function Project(project: ProjectType) {
 
 
     return (
-        <motion.div className='ring-[0.1rem] ring-primary-foreground rounded-md my-4 px-4 md:p-4'
+        <motion.div className='my-4 px-4 md:p-4 ring-[0.1rem] ring-primary-foreground rounded-md'
             ref={ref}
             style={{
                 scale: scaleProgess,
                 opacity: opacityProgess,
             }}>
+            <div className='absolute inset-0 -z-10'/>
             <h2 className='text-2xl font-semibold my-4 text-white'>
                 {project.title}
             </h2>
