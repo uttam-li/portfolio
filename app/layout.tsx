@@ -4,15 +4,21 @@ import "./globals.css";
 import Header from "@/components/header";
 import { CascadiaCode, geist } from "@/fonts/font";
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Fira_Sans({
   subsets: ["latin"],
   weight: "400"
 });
-const dmsans = DM_Sans({ subsets: ["latin"] });
+
+const dmsans = DM_Sans({
+  subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://puli.vercel.app'),
   title: "Uttam | Portfolio",
   description: "I am a full-stack developer. I love to build things that are useful and beautiful.",
   generator: "Next.js",
@@ -68,10 +74,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark !scroll-smooth">
-      <body className={`${dmsans.className} flex flex-col items-center justify-center relative bg-[#050505]`}>
-          <Header />
-          {children}
-          <Toaster />
+      <body className={`${dmsans.className} bg-[#050505]`}>
+        <Header />
+        {children}
+        <Toaster />
+        <Analytics />
       </body>
     </html>
   );

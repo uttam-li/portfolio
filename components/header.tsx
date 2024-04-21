@@ -67,7 +67,7 @@ export default function Header() {
                 className="fixed inset-4 ring-1 ring-secondary rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] h-[3rem] sm:h-[3.5rem] max-w-[1000px] flex items-center justify-between z-999 backdrop-blur-lg backdrop-brightness-10 pr-4 mx-auto"
             >
                 <aside className='pl-3 md:pl-4'>
-                    <h1 className={`text-4xl ${font.className} text-muted-foreground mr-5`}>
+                    <h1 className={`text-4xl ${font.className} text-muted-foreground mr-5 mt-1`}>
                         UL
                     </h1>
                 </aside>
