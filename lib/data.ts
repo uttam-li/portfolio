@@ -8,7 +8,7 @@ import {
   BsTwitter,
   BsTools,
 } from "react-icons/bs";
-import { UserIcon, Briefcase05Icon, BulbIcon, StarIcon } from 'hugeicons-react'
+import { UserIcon, Briefcase05Icon, BulbIcon, StarIcon } from "hugeicons-react";
 import {
   SiPython,
   SiReact,
@@ -102,6 +102,30 @@ export const projects = [
     ],
   },
   {
+    title: "YT Playlist Length",
+    description:
+      "Effortlessly calculate the total duration of any YouTube playlist with advanced filter option and at different speeds. Simply paste the playlist URL and get the total time instantly.",
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/uttam-li/yt-playlist-length",
+        icon: createElement(BsGithub),
+      },
+      {
+        name: "Demo",
+        url: "https://yt-playlist-duration.vercel.app/",
+        icon: createElement(BsBoxArrowUpRight),
+      },
+    ],
+    bagdes: [
+      "NextJS",
+      "TailwindCSS",
+      "Youtube Data API",
+      "Axios",
+      "Zod"
+    ],
+  },
+  {
     title: "TechNotes",
     description:
       "techNotes is for a small buisness to track and manage their notes. It offers an intuitive interface with features like role based autherization. It is a full stack application with a React frontend and Node.js backend.",
@@ -175,7 +199,7 @@ export const skills = [
   { name: "Redux", icon: createElement(SiRedux) },
   { name: "Nodejs", icon: createElement(SiNodedotjs) },
   { name: "Express", icon: createElement(SiExpress) },
-  { name: "Redis", icon: createElement(SiRedis)},
+  { name: "Redis", icon: createElement(SiRedis) },
   { name: "PostgreSQL", icon: createElement(SiPostgresql) },
   { name: "Prisma", icon: createElement(SiPrisma) },
   { name: "MongoDB", icon: createElement(SiMongodb) },
