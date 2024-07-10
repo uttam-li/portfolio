@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from '@vercel/analytics/react';
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://puli.vercel.app'),
@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark !scroll-smooth">
-      <body className={`${inter.className} relative flex flex-col items-center justify-center bg-[#050505]`}>
+      <body className={`relative text-sm md:text-base flex flex-col items-center justify-center bg-[#050505]`}>
         <Header />
         {children}
         <Toaster />
