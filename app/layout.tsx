@@ -1,34 +1,50 @@
-import type { Metadata } from "next";
-import "./globals.css";
-// import { Inter } from "next/font/google";
-import Header from "@/components/header";
-import { Toaster } from "@/components/ui/toaster"
-import { Analytics } from '@vercel/analytics/react';
+import "@/styles/globals.css";
+import { Metadata, Viewport } from "next";
+import { ReactNode } from "react";
+import clsx from "clsx";
 
-// const inter = Inter({ subsets: ["latin"] });
+import { fontSans } from "@/config/fonts";
+import { ThemeSwitch } from "@/components/theme-switch";
+
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://puli.vercel.app'),
+  metadataBase: new URL("https://puli.vercel.app"),
   title: "Uttam | Portfolio",
-  description: "I am a full-stack developer. I love to build things that are useful and beautiful.",
+  description:
+    "I am a full-stack developer. I’m looking to work on interesting and challenging projects.",
   generator: "Next.js",
   applicationName: "Uttam | Portfolio",
-  keywords: ["Uttam", "Uttam Likhiya", "Uttam | Portfolio", "Likhiya", "Portfolio", "Developer", "Full-stack", "React", "Next.js", "TailwindCSS", "JavaScript", "Web Development", "Frontend Development", "Backend Development", "Node.js", "Express.js", "MongoDB", "SQL", "HTML", "CSS", "Responsive Design", "Web Design", "UI/UX", "Software Engineer", "Coding", "Programming"],
-  authors: [{ name: 'Uttam Likhiya', url: 'https://puli.vercel.app' }],
+  keywords: [
+    "Uttam",
+    "Likhiya",
+    "Portfolio",
+    "Uttam Likhiya",
+    "Uttam | Portfolio",
+    "Surat",
+    "Gujarat",
+    "Developer",
+    "Full-stack",
+    "React",
+    "Web Development",
+    "Programming",
+  ],
+  authors: [{ name: "Uttam Likhiya", url: "https://puli.vercel.app" }],
   openGraph: {
-    title: 'Uttam | Portfolio',
-    description: 'I am a full-stack developer. I love to build things that are useful and beautiful.',
-    url: 'https://puli.vercel.app',
+    title: "Uttam | Portfolio",
+    description:
+      "I am a full-stack developer. I’m looking to work on interesting and challenging projects.",
+    url: "https://puli.vercel.app",
     images: [
       {
-        url: 'https://puli.vercel.app/UL.png',
-        width: 1213,
-        height: 661,
-        alt: 'UL',
+        url: "https://puli.vercel.app/UL.png",
+        width: 1200,
+        height: 630,
+        alt: "UL",
       },
     ],
-    locale: 'en_IN',
-    type: 'website',
+    locale: "en_IN",
+    type: "website",
   },
   robots: {
     index: true,
@@ -38,37 +54,51 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
+      "max-video-preview": -1,
+      "max-image-preview": "large",
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Uttam | Portfolio',
-    description: 'I am a full-stack developer. I love to build things that are useful and beautiful.',
-    creator: 'Uttam Likhiya',
-    creatorId: '@L1KH1YAUTTAM',
-    images: ['https://puli.vercel.app/UL.png',],
+    card: "summary_large_image",
+    title: "Uttam | Portfolio",
+    description:
+      "I am a full-stack developer. I’m looking to work on interesting and challenging projects.",
+    creator: "Uttam Likhiya",
+    creatorId: "@L1KH1YAUTTAM",
+    images: ["https://puli.vercel.app/UL.png"],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark !scroll-smooth">
-      <body className={`relative text-sm md:text-base flex flex-col items-center justify-center bg-[#050505]`}>
-        <Header />
-        {children}
-        <Toaster />
-        <Analytics />
+    <html suppressHydrationWarning lang="en">
+      <head />
+      <body
+        className={clsx(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          <div className="relative flex flex-col">
+            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col items-center">
+              {children}
+            </main>
+            <ThemeSwitch />
+          </div>
+        </Providers>
       </body>
     </html>
   );

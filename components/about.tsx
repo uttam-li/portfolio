@@ -1,96 +1,93 @@
-'use client'
+import { Link } from "@nextui-org/link";
+import { button as buttonStyles } from "@nextui-org/theme";
+import { FaXTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa6";
 
-import { Button } from "@/components/ui/button";
-import { DrawerDemo as Contect } from "@/components/contect";
-import { easeIn, easeInOut, easeOut, motion, stagger } from 'framer-motion'
-import { socialLinks } from "@/lib/data";
-import Link from "next/link";
-import { downloadResume } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
+import { title, paragraph } from "@/components/primitives";
 
 export default function About() {
-
-  const UnderlinedText = ({ children }: { children: React.ReactNode }) => (
-    <span className="text-white underline decoration-muted hover:decoration-white underline-offset-4 transition-all">
-      {children}
-    </span>
-  );
-
   return (
-    <motion.main
-      className="md:w-[41rem] m-auto px-7 py-10 mt-24"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: easeInOut }}
-      
-    >
-      <motion.h1 className="font-bold text-4xl scroll-m-[40rem]"
-        id="about"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0, }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-      >Uttam Likhiya</motion.h1>
-      <motion.span
-        className="text-sm text-muted-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >&lt;supercelluttam@gmail.com&gt;</motion.span>
-      <motion.article
-        className="mt-12 mb-8 text-muted-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-      // transition={{delay: 0.8}}
-      >
-        <motion.p
-          className="mb-8"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >Hey, I&apos;m Uttam Likhiya, a <UnderlinedText>self-taught</UnderlinedText> developer residing in <UnderlinedText>Surat, Gujarat</UnderlinedText>, skilled in both <UnderlinedText>Frontend</UnderlinedText> and <UnderlinedText>Backend</UnderlinedText> web development with an year of hands-on experience. Currently pursuing a degree in <UnderlinedText>Computer Engineering</UnderlinedText>, I&apos;m passionate about crafting seamless digital experiences from databases to CSS stylesheets.</motion.p>
+    <section className="flex flex-col items-start justify-center gap-4 py-8 md:mt-12 md:px-16 md:py-10">
+      <div className="inline-block max-w-xl justify-center">
+        <h1 className={title({ size: "md" })}>Uttam Likhiya</h1>
+        <p className={paragraph()}>
+          {
+            "Hello 👋🏼! I am a software developer based in 📍Surat, Gujarat, currently pursuing a Bachelor's degree 🎓 in Computer Engineering. I am capable of building for 🌐 web and 📱 mobile platforms. I’m looking to work on interesting and challenging projects. 💻📚"
+          }
+        </p>
+      </div>
 
-        <motion.p
-          className=""
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-        >In my spare time, I delve into various subjects through books, ranging from <UnderlinedText>Psychology</UnderlinedText>, <UnderlinedText>Fiction</UnderlinedText> and <UnderlinedText>Science</UnderlinedText>. Additionally, I have a keen interest in photography, capturing moments that inspire my creativity and broaden my perspective on the world.</motion.p>
-      </motion.article>
-      <motion.div
-        className="inline-flex gap-4"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      >
-        {/* <Button variant="outline" size='lg' className="mr-5">Get in touch</Button> */}
-        <Contect />
-        <Button variant="secondary" onClick={() => downloadResume()}>Resume</Button>
-      </motion.div>
-      <motion.hr className="mt-12 text-muted-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5 }} />
-      <motion.p className="mt-5 text-muted-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7 }}>Find me on</motion.p>
-      <motion.div className="my-2 flex gap-x-5 flex-wrap gap-y-2 text-muted-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-      >
-        {
-          socialLinks.map((link) => (
-            <Link key={link.name} href={link.url} className="underline-offset-4 underline decoration-muted hover:decoration-white hover:text-accent-foreground">
-              <span className="flex items-center justify-center gap-2 transition-all">
-                {link.icon}{link.name}
-              </span>
-            </Link>
-          ))
-        }
-      </motion.div>
-      <motion.hr className="mt-5 text-muted-foreground" initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.5 }} />
-    </motion.main>
-  )
+      <div className="flex gap-3">
+        <Link
+          isExternal
+          className={buttonStyles({
+            color: "primary",
+            radius: "full",
+            variant: "shadow",
+          })}
+          href={"/resume.pdf"}
+        >
+          Resume
+        </Link>
+
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "bordered",
+            radius: "full",
+          })}
+          href="mailto:supercelluttam@gmail.com"
+        >
+          Contact Me
+        </Link>
+      </div>
+
+      <div className="my-4 inline-flex items-center gap-2">
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "light",
+            radius: "full",
+            isIconOnly: true,
+          })}
+          href={siteConfig.links.twitter}
+        >
+          <FaXTwitter className="text-default-600" size={24} />
+        </Link>
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "light",
+            radius: "full",
+            isIconOnly: true,
+          })}
+          href={siteConfig.links.github}
+        >
+          <FaGithub className="text-default-600" size={24} />
+        </Link>
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "light",
+            radius: "full",
+            isIconOnly: true,
+          })}
+          href={siteConfig.links.linkedin}
+        >
+          <FaLinkedin className="text-default-600" size={24} />
+        </Link>
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "light",
+            radius: "full",
+            isIconOnly: true,
+          })}
+          href={siteConfig.links.instagram}
+        >
+          <FaInstagram className="text-default-600" size={24} />
+        </Link>
+      </div>
+    </section>
+  );
 }
