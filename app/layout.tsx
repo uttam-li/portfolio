@@ -2,6 +2,8 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { fontSans } from "@/config/fonts";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -95,6 +97,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="relative flex flex-col">
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col items-center">
               {children}
+              <Analytics />
+              <SpeedInsights />
             </main>
             <ThemeSwitch />
           </div>
