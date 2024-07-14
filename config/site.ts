@@ -285,7 +285,7 @@ export const experience = [
     ],
   },
   {
-    peroid: "APR 2024 — APR 2024",
+    period: "APR 2024 — APR 2024",
     role: "Freelance Developer",
     description: [
       {
