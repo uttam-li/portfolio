@@ -45,7 +45,7 @@ export default function Projects() {
                 ))}
               </div>
             </CardHeader>
-            <Divider className="w-[93%] mx-auto sm:w-[95%]" />
+            <Divider className="w-[93%] h-[0.05rem] mx-auto sm:w-[95%]" />
             <CardBody className="overflow-visible text-sm py-2 md:text-base text-default-600">
               {item.description}
             </CardBody>

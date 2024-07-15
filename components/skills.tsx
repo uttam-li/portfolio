@@ -18,7 +18,7 @@ export default function Skills() {
             {item.icon}
             {item.category}
           </CardHeader>
-          <Divider className="w-[93%] mx-auto sm:w-[95%]" />
+          <Divider className="w-[93%] h-[0.05rem] mx-auto sm:w-[95%]" />
           <CardBody>
             <ul className="inline-flex flex-wrap items-end gap-4 md:block sm:space-y-4 text-default-600 group transition-all">
               {item.lang.map((el) => (

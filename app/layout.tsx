@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
+import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -93,7 +93,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+        <Providers
+          themeProps={{
+            attribute: "class",
+            enableSystem: true,
+            defaultTheme: "light",
+          }}
+        >
           <div className="relative flex flex-col">
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col items-center">
               {children}

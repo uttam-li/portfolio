@@ -37,7 +37,7 @@ export default function Experience() {
             <p className="text-sm text-default-400">{item.period}</p>
             <h3 className="font-semibold text-xl">{item.role}</h3>
           </CardHeader>
-          <Divider className="w-[93%] mx-auto sm:w-[95%]" />
+          <Divider className="w-[93%] h-[0.05rem] mx-auto sm:w-[95%]" />
           <CardBody>
             <p className="text-sm text-default-800 md:text-base">
               <ul className="space-y-2">

@@ -44,7 +44,7 @@ export default function Testimonials() {
             </div>
           </div>
         </CardHeader>
-        <Divider className="w-[93%] my-2 mx-auto sm:w-[95%]" />
+        <Divider className="w-[93%] my-2 h-[0.05rem] mx-auto sm:w-[95%]" />
         <CardBody className="text-small space-y-2 text-default-600 md:text-base">
           <p>
             <span className="px-2">·</span>
