@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           themeProps={{
             attribute: "class",
             enableSystem: true,
-            defaultTheme: "light",
+            defaultTheme: "system",
           }}
         >
           <div className="relative flex flex-col">
