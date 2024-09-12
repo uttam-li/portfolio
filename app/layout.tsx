@@ -4,11 +4,16 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Albert_Sans } from "next/font/google";
 
-import { fontSans } from "@/config/fonts";
 import { ThemeSwitch } from "@/components/theme-switch";
 
 import { Providers } from "./providers";
+
+const albert_sans = Albert_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://puli.vercel.app"),
@@ -89,8 +94,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          "min-h-screen bg-background antialiased",
+          albert_sans.className,
         )}
       >
         <Providers
@@ -100,14 +105,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             defaultTheme: "system",
           }}
         >
-          <div className="relative flex flex-col">
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col items-center">
-              {children}
-              <Analytics />
-              <SpeedInsights />
-            </main>
-            <ThemeSwitch />
-          </div>
+          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col items-center">
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </main>
+          <ThemeSwitch />
         </Providers>
       </body>
     </html>

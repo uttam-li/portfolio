@@ -3,16 +3,17 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { FaXTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa6";
 
 import { siteConfig } from "@/config/site";
-import { title, paragraph } from "@/components/primitives";
 
 export default function About() {
   return (
     <section className="flex flex-col items-start justify-center gap-4 py-8 md:mt-12 md:px-16 md:py-10">
       <div className="inline-block max-w-xl justify-center">
-        <h1 className={title({ size: "md" })}>Uttam Likhiya</h1>
-        <p className={paragraph()}>
+        <h1 className="tracking-tight inline font-semibold text-[2.3rem] lg:text-5xl leading-9">
+          Uttam Likhiya
+        </h1>
+        <p className="w-full my-4 text-sm md:text-base block max-w-full dark:opacity-85">
           {
-            "Hello 👋🏼! I am a software developer based in 📍Surat, Gujarat, currently pursuing a Bachelor's degree 🎓 in Computer Engineering. I am capable of building for 🌐 web and 📱 mobile platforms. I’m looking to work on interesting and challenging projects. 💻📚"
+            "Hello 👋🏼! I am a software developer based in 📍Surat, Gujarat, currently pursuing a Bachelor’s degree 🎓 in Computer Engineering. I am capable of building for 🌐 web and 📱 mobile platforms. I’m looking to work on interesting and challenging projects. 💻📚"
           }
         </p>
       </div>

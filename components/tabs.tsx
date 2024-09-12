@@ -13,6 +13,7 @@ export default function TabSection() {
     <div className="flex flex-col w-full gap-4 sm:items-center pb-20">
       <Tabs
         aria-label="Profile"
+        className="tabs-bar"
         defaultSelectedKey="projects"
         radius="full"
         variant="bordered"
